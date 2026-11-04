@@ -1,0 +1,5 @@
+git ls-files -z | while IFS= read -r -d '' file; do
+  [[ "$file" == "README.md" ]] || git rm -- "$file"
+done
+git commit -m "Remove all files except README.md"
+git push
